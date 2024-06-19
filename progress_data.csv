@@ -1,0 +1,10 @@
+Fluid Line,Flushing Preparation,PPM Leak Check,Flushing/Blowing Execution,Pressure Test Preparation,Pressure Test Execution,DSM Sign-Off,Overall Progress
+N2 line,100,100,100,100,100,100,100.0
+"25, 35 OLM",100,100,100,75,0,0,55.00000046858153
+98 SA,0,0,0,0,0,0,0.0
+WSA,0,0,0,0,0,0,0.0
+SO3G,100,100,20,0,0,0,23.958583380382596
+POW,100,100,100,100,100,100,100.0
+"WT (S) air blowing, WT (R) air blowing",0,0,0,0,0,0,0.0
+"WT (S), WT (R) flushing",0,0,0,0,0,0,0.0
+VG (S),0,0,0,0,0,0,0.0
