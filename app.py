@@ -14,8 +14,8 @@ steam_lines = [
 ]
 
 stages = [
-    "Flushing Preparation", "PPM Leak Check", "Flushing/Blowing Execution",
-    "Pressure Test Preparation", "Pressure Test Execution", "DSM Sign-Off"
+    "Flushing Prep", "Leak Check", "Flushing/Blowing",
+    "Pressure Test Prep", "Pressure Test", "Sign-Off"
 ]
 
 # Function to calculate overall progress for each fluid line
