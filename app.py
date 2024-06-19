@@ -6,7 +6,7 @@ import os
 fluid_lines = [
     "N2 line", "25, 35 OLM", "98 SA", "WSA", "SO3G", "POW", 
     "WT (S) air blowing, WT (R) air blowing", "WT (S), WT (R) flushing",
-    "VG (S)", 
+    "CAP", "VG (S)", 
 ]
 
 steam_lines = [
@@ -15,7 +15,7 @@ steam_lines = [
 
 stages = [
     "Flushing Prep", "Leak Check", "Flushing/Blowing",
-    "Pressure Test Prep", "Pressure Test", "Sign-Off"
+    "Pressure Test Prep", "Leak Check", "Pressure Test", "Sign-Off"
 ]
 
 # Function to calculate overall progress for each fluid line
