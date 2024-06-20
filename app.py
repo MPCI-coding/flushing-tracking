@@ -6,7 +6,7 @@ import os
 fluid_lines = [
     "N2 line", "25, 35 OLM", "98 SA", "WSA", "SO3G", "POW", 
     "WT (S) air blowing", "WT (R) air blowing", "WT (S) flushing", "WT (R) flushing",
-    "CAP", "VG (S)", 
+    "CAP", 
 ]
 
 steam_lines = [
