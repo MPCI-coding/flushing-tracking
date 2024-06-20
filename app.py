@@ -5,7 +5,7 @@ import os
 # Define the fluid lines and stages
 fluid_lines = [
     "N2 line", "25, 35 OLM", "98 SA", "WSA", "SO3G", "POW", 
-    "WT (S), WT (R) air blowing", "WT (S), WT (R) flushing",
+    "WT (S), WT (R) blowing", "WT (S), WT (R) flushing",
     "CAP", 
 ]
 
