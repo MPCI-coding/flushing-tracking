@@ -1,9 +1,9 @@
-﻿Fluid Line,Flushing Prep,Leak Check 1,Flushing/Blowing,Pressure Test Prep,Leak Check 2,Pressure Test,Sign-Off,Overall Progress
+Fluid Line,Flushing Prep,Leak Check 1,Flushing/Blowing,Pressure Test Prep,Leak Check 2,Pressure Test,Sign-Off,Overall Progress
 N2 line,100,100,100,100,100,100,100.0,100.0
 "25, 35 OLM",100,100,100,100,100,100,0.0,85.71428571428571
 98 SA,0,0,0,0,0,0,0.0,0.0
 WSA,0,0,0,0,0,0,0.0,0.0
-SO3G,100,100,75,0,0,0,0.0,39.285714285714285
+SO3G,100,100,90,0,0,0,0.0,41.42857142857143
 POW,100,100,100,100,100,100,100.0,100.0
 "WT (S), WT (R) blowing",0,0,0,0,0,0,0.0,0.0
 "WT (S), WT (R) flushing",0,0,0,0,0,0,0.0,0.0
