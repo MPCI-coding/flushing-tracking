@@ -5,7 +5,7 @@ import os
 # Define the fluid lines and stages
 fluid_lines = [
     "N2 line", "25, 35 OLM", "98 SA", "WSA", "SO3G", "POW", 
-    "WT (S) air blowing, WT (R) air blowing", "WT (S), WT (R) flushing",
+    "WT (S) air blowing", "WT (R) air blowing", "WT (S) flushing", "WT (R) flushing",
     "CAP", "VG (S)", 
 ]
 
@@ -14,13 +14,13 @@ steam_lines = [
 ]
 
 stages = [
-    "Flushing Prep", "Leak Check", "Flushing/Blowing",
-    "Pressure Test Prep", "Leak Check", "Pressure Test", "Sign-Off"
+    "Flushing Prep", "Leak Check 1", "Flushing/Blowing",
+    "Pressure Test Prep", "Leak Check 2", "Pressure Test", "Sign-Off"
 ]
 
 # Function to calculate overall progress for each fluid line
 def calculate_overall_progress(row):
-    stages_progress = row[1:]  # Exclude 'Fluid Line'
+    stages_progress = row[:-1]  # Exclude 'Overall Progress' itself
     stages_progress = [float(value) for value in stages_progress]  # Convert to float
     return sum(stages_progress) / len(stages_progress)
 
@@ -31,7 +31,10 @@ def calculate_total_progress(df):
 # Load initial data from CSV if it exists
 file_path = "progress_data.csv"
 if os.path.exists(file_path):
-    df = pd.read_csv(file_path, index_col="Fluid Line")
+    df = pd.read_csv(file_path)
+    if 'Unnamed: 0' in df.columns:
+        df = df.drop(columns=['Unnamed: 0'])
+    df = df.set_index('Fluid Line')
 else:
     # Initialize the DataFrame with all zeros if CSV does not exist
     data = {stage: [0]*len(fluid_lines) for stage in stages}
@@ -49,9 +52,9 @@ df["Overall Progress"] = df.apply(calculate_overall_progress, axis=1)
 st.title("Flushing/Blowing Progress Tracker")
 
 # Calculate total overall progress
-total_progress = calculate_total_progress(df)
-st.header(f"Total Overall Progress: {total_progress:.2f}%")
-st.progress(total_progress / 100)  # Convert to 0-1 scale
+total_progress = calculate_total_progress(df) / 100  # Normalize to 0-1 scale
+st.header(f"Total Overall Progress: {total_progress * 100:.2f}%")
+st.progress(total_progress)
 
 # Display the DataFrame
 st.dataframe(df)
@@ -88,9 +91,9 @@ if st.button("Save Progress"):
 
 if st.button("Load Progress"):
     df = load_progress(file_path)
-    total_progress = calculate_total_progress(df)
-    st.header(f"Total Overall Progress: {total_progress:.2f}%")
-    st.progress(total_progress / 100)  # Convert to 0-1 scale
+    total_progress = calculate_total_progress(df) / 100  # Normalize to 0-1 scale
+    st.header(f"Total Overall Progress: {total_progress * 100:.2f}%")
+    st.progress(total_progress)
     st.success("Progress data loaded successfully!")
     st.experimental_rerun()  # Rerun the script to replace the table
 
